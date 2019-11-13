@@ -2,7 +2,6 @@ package com.codegym.cms.service.impl;
 
 import com.codegym.cms.model.Customer;
 import com.codegym.cms.repository.CustomerRepository;
-import com.codegym.cms.repository.impl.CustomerRepositoryImpl;
 import com.codegym.cms.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -14,13 +13,13 @@ public class CustomerServiceImpl implements CustomerService{
     private CustomerRepository customerRepository;
 
     @Override
-    public List<Customer> findAll() {
+    public Iterable<Customer> findAll() {
         return customerRepository.findAll();
     }
 
     @Override
     public Customer findById(Long id) {
-        return customerRepository.findById(id);
+        return customerRepository.findOne(id);
     }
 
     @Override
@@ -30,6 +29,6 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void remove(Long id) {
-        customerRepository.remove(id);
+        customerRepository.delete(id);
     }
 }

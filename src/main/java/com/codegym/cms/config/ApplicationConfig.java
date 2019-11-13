@@ -1,7 +1,9 @@
 package com.codegym.cms.config;
 
 import com.codegym.cms.service.CustomerService;
+import com.codegym.cms.service.ProvinceService;
 import com.codegym.cms.service.impl.CustomerServiceImpl;
+import com.codegym.cms.service.impl.ProvinceServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -54,10 +56,10 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         return new CustomerServiceImpl();
     }
 
-//    @Bean
-//    public ProvinceService provinceService() {
-//        return new ProvinceServiceImpl();
-//    }
+    @Bean
+    public ProvinceService provinceService() {
+        return new ProvinceServiceImpl();
+    }
 
 
     //Thymeleaf Configuration
